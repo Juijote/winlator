@@ -5,6 +5,8 @@ on:
     branches:
       - main
 
+  workflow_dispatch: # 手动执行触发
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,7 +25,9 @@ jobs:
         run: sudo apt-get install -y gradle
 
       - name: 编译应用
-        run: ./app assembleDebug
+        run: |
+          ./gradlew build
+        working-directory: ./app
 
       - name: 上传 APK
         uses: actions/upload-artifact@v2
