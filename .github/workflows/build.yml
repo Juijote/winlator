@@ -1,11 +1,11 @@
-﻿name: 编译安卓应用
+﻿name: build
 
 on:
   push:
     branches:
       - main
 
-  workflow_dispatch: # 手动执行触发
+  workflow_dispatch: 
 
 jobs:
   build:
@@ -28,10 +28,10 @@ jobs:
           export PATH=$PATH:/opt/gradle/gradle-8.6-rc-3/bin
 
       - name: 编译应用
-        run: gradle build
+        run: gradle -p app build
 
       - name: 上传 APK
         uses: actions/upload-artifact@v2
         with:
           name: app-debug.apk
-          path: app/build/outputs/apk/debug/app-debug.apk
+          path: app/build/outputs/apk/release/
