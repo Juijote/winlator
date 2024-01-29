@@ -38,7 +38,7 @@
     <string name="profile_name">Profile Name</string>
     <string name="name">Name</string>
     <string name="ok">OK</string>
-    <string name="cancel">Cancel</string>
+    <string name="cancel">取消</string>
     <string name="untitled">Untitled</string>
     <string name="no_profile_selected">No profile selected</string>
     <string name="no_profile_found">No profile found</string>
